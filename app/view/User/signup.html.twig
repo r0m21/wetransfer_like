@@ -1,0 +1,51 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Inscription</title>
+{% endblock %}
+
+{% block content %}
+    <div class="col s12">
+        <div class="row">
+            <h1 class="col s12 m6 offset-m3 roboto teal-text text-lighten-2">Inscription</h1>
+        </div>
+        <div class="row">
+            {% if message != '' %}
+                <div class="card-panel teal lighten-2">{{ message }}</div>
+            {% endif %}
+            <form action="" class="col s12 m6 offset-m3" method="POST">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="login" name="login" class="validate">
+                        <label for="login">Login</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="password" id="password" name="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input type="email" id="email" name="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect waves-light" type="submit" value="Inscription" name="submitSignup">S'inscrire
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>                        
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <a href="http://localhost/mycine/login" class="roboto">Se connecter</a>
+                    </div>                        
+                </div>
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}
