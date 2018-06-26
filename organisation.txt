@@ -1,0 +1,17 @@
+Programme pour la réalisation du projet Wetransfer :
+
+Jour 1 :
+
+* Présentation de la maquette élaborée en fonction du cahier des charges et du contacte avec le client.
+* Création d'un MCD et importation de la base de donnée 
+
+Jour 2 :
+
+* Préparation des controllers
+* Déterminer l'interactivité et le dynamisme du site
+* Répondre aux retours
+
+Jour 3 :
+
+* PHP Mailer de base
+* Début d'intégration de design
