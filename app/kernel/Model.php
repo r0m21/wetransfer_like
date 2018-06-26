@@ -23,7 +23,7 @@ abstract class Model  {
 	abstract public function Delete();
 	
     /**
-     * Vérifie sur la suppresion est possible
+     * Vérifie sur la suppression est possible
      */
 	abstract public function IsDeletable();
 

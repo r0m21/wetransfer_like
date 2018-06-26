@@ -1,0 +1,12 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Home</title>
+{% endblock %}
+
+{% block content %}
+    <input type="file" name="fichier" id="fichier" />
+    <input type="text" name="expediteur" id="expediteur">
+    <input type="text" name="destinataire" id="destinataire">
+    <input type="submit" value="Envoyer" name="submitForm">
+{% endblock %}
