@@ -10,14 +10,14 @@ class Router {
         );
 
         if($request === '' || $request === '/'){ // Route vers la page d'accueil
-            $result['controller']   = 'Home';
+            $result['controller']   = 'Page';
             $result['action']       = 'display';
         } else {
             $parts = explode('/', $request);
 
             if($parts[0] == 'transfert' && (count($parts) == 1 || $parts[1] == '')){ // Route vers la page d'inscription
-                $result['controller']       = 'Transfert';
-                $result['action']           = 'display';
+                $result['controller']       = 'Page';
+                $result['action']           = 'pageTransfert';
             }elseif($parts[0] == 'success' && (count($parts) == 1 || $parts[1] == '')){ // Deconnexion de l'utilisateur
                 $result['controller']       = 'Success';
                 $result['action']           = 'display';

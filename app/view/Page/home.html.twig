@@ -5,8 +5,15 @@
 {% endblock %}
 
 {% block content %}
-    <input type="file" name="fichier" id="fichier" />
-    <input type="text" name="expediteur" id="expediteur">
-    <input type="text" name="destinataire" id="destinataire">
-    <input type="submit" value="Envoyer" name="submitForm">
+    <form method="POST" action="home" enctype="multipart/form-data">
+        <input type="file" name="fichier" id="fichier" />
+        <input type="text" name="expediteur" id="expediteur">
+        <input type="text" name="destinataire" id="destinataire">
+        <input type="submit" value="Envoyer" name="submitForm">
+    </form>
+    {%   if message != ''   %}
+    <p class="{{type}}">
+        {{message}}
+    </p>
+    {%   endif   %}
 {% endblock %}
