@@ -43,37 +43,43 @@ class Upload extends TransfertController {
                     if($erreur == 0){
                         $expediteur= $_POST['expediteur'];
                         $destinataire= $_POST['destinataire'];
-                        is_a_mail($expediteur);
-                        is_a_mail($destinataire);
-                        $fichier = $_FILES['fichier'];
-                        $ext = substr($fichier['name'], strrpos($fichier['name'], '.') + 1);
-                        $unallowed_ext = array("exe", "EXE");
-                         
-                        if(!in_array($ext, $unallowed_ext)){
-                            $db = Database::getInstance();
-                            $sql = 
-                            "INSERT INTO transfer_table
-                            (
-                            tra_expediteur, 
-                            tra_destinataire, 
-                            tra_fichier
-                            )
-                            VALUES (
-                                :tra_expediteur, 
-                                :tra_destinataire, 
-                                :tra_fichier
-                            )";
-                            $stmt = $db->prepare($sql);
-                            $stmt->bindValue(':tra_expediteur', $expediteur, PDO::PARAM_STR);
-                            $stmt->bindValue(':tra_destinataire', $destinataire, PDO::PARAM_STR);
-                            $stmt->bindValue(':tra_fichier', $fichier['name'], PDO::PARAM_STR);                            
-                            $stmt->execute();
-                            print_r ($fichier);
-
-                            $message['msg'] = 'Fichier envoyé';
-                            $message['type'] = 'success';  
-                            
+                        print_r($expediteur);
+                        print_r($destinataire);
+                        if(is_a_mail($expediteur) && is_a_mail($destinataire)){
+                            $fichier = $_FILES['fichier'];
+                            $ext = substr($fichier['name'], strrpos($fichier['name'], '.') + 1);
+                            $unallowed_ext = array("exe", "EXE");
+                             
+                            if(!in_array($ext, $unallowed_ext)){
+                                $db = Database::getInstance();
+                                $sql = 
+                                "INSERT INTO transfer_table
+                                (
+                                tra_expediteur, 
+                                tra_destinataire, 
+                                tra_fichier
+                                )
+                                VALUES (
+                                    :tra_expediteur, 
+                                    :tra_destinataire, 
+                                    :tra_fichier
+                                )";
+                                $stmt = $db->prepare($sql);
+                                $stmt->bindValue(':tra_expediteur', $expediteur, PDO::PARAM_STR);
+                                $stmt->bindValue(':tra_destinataire', $destinataire, PDO::PARAM_STR);
+                                $stmt->bindValue(':tra_fichier', $fichier['name'], PDO::PARAM_STR);                            
+                                $stmt->execute();
+    
+                                $message['msg'] = 'Fichier envoyé';
+                                $message['type'] = 'success';  
+                                
+                            }
+                        } else {
+                            $message['msg'] = 'Email invalide';
+                            $message['type'] = 'error';
                         }
+                        
+                      
                     }
             }
             else{

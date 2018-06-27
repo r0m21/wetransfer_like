@@ -244,11 +244,11 @@ function txt_img_rewrite($chaine){
 
 // Vérifier un email
 function is_a_mail($chaine){
-	if(!preg_match("/^[-a-z0-9\._]+@[-a-z0-9\.]+\.[a-z]{2,4}$/i", $chaine)){
+	if(preg_match("/^[-a-z0-9\._]+@[-a-z0-9\.]+\.[a-z]{2,4}$/i", $chaine)){
+        return true;
+	} else{
         return false;
-        echo('Veuillez entrer un mail valide');
-
-	}
+    }
 }
 
 // Adapte un texte en vue d'une requête MySQL
