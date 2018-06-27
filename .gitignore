@@ -1,5 +1,7 @@
 vendor
+upload
 .htaccess
 app/config.php
 
 we_transfer_like.sql
+

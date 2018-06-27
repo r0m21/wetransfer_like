@@ -4,7 +4,8 @@ class PageController extends Controller {
 
         
     public function display(){
-        $message['msg'] = ''; $message['type'] = '';
+        $message['msg'] = ''; $message['type'] = '';$message['url'] = '';
+
         if(isset($_POST['submitForm'])){  
             $result = Upload::uploadFiles();
             $message = $result;
@@ -12,11 +13,13 @@ class PageController extends Controller {
         $template = $this->twig->loadTemplate('/Page/home.html.twig');
         echo $template->render(array(
             'message' => $message['msg'],
-            'type' => $message['type']
+            'type' => $message['type'],
+            'url' => $message['url']
         ));
     }
-/*     public function pageTransfert(){
+    public function pageTransfert(){
         $template = $this->twig->loadTemplate('/Page/transfert.html.twig');
         echo $template->render(array()); 
-    } */
+    }
+
 }

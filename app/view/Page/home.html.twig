@@ -11,9 +11,17 @@
         <input type="text" name="destinataire" id="destinataire">
         <input type="submit" value="Envoyer" name="submitForm">
     </form>
+
+    {%   if url != ''   %}
+    <a href="{{ url }}">POUET</a>
+    {%   endif   %}
+
     {%   if message != ''   %}
-    <p class="{{type}}">
-        {{message}}
+    <p class="{{ type }}">
+        {{ message }}
     </p>
     {%   endif   %}
+
+    
+
 {% endblock %}
