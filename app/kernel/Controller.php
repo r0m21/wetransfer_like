@@ -13,5 +13,6 @@ class Controller {
             'cache' => false
         ));
 
+        $this->twig->addGlobal('sessions', $_SESSION);
     }    
 }

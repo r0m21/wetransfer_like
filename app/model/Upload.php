@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class Upload extends Model {
 
@@ -34,10 +36,12 @@ class Upload extends Model {
     }
 
     public static function uploadFiles() {
-        
+
+        unset($_SESSION['globalMessage']);
+
         $erreur = 0;
 
-        if(isset($_POST['submitForm'])){
+        
             if(!empty($_FILES)){
 
                 $message = array();
@@ -78,8 +82,7 @@ class Upload extends Model {
                     if($erreur == 0){
                         $expediteur= $_POST['expediteur'];
                         $destinataire= $_POST['destinataire'];
-                        print_r($expediteur);
-                        print_r($destinataire);
+                        
                         if(is_a_mail($expediteur) && is_a_mail($destinataire)){
                             $fichier = $_FILES['fichier'];
                             $ext = substr($fichier['name'], strrpos($fichier['name'], '.') + 1);
@@ -134,8 +137,10 @@ class Upload extends Model {
                 $message['type'] = 'error';    
             } 
             return $message;
-        }
+            return $_SESSION['globalMessage'] = $message;
+        
     }
+
 
     public static function getFiles($id) {
         $db = Database::getInstance();
@@ -149,5 +154,42 @@ class Upload extends Model {
         $stmt->execute();
         
         return $stmt->fetch();            
+    }
+
+    public static function newMail(){
+
+        $expediteur= $_POST['expediteur'];
+        $destinataire= $_POST['destinataire'];
+
+        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+        try {
+            //Server settings
+            $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;     // Enable SMTP authentication
+            $mail->Mailer = "smtp";                               
+            $mail->Username = 'Youpload2@outlook.fr';                 // SMTP username
+            $mail->Password = 'azerty1234';                           // SMTP password
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587;                                    // TCP port to connect to
+        
+            //Recipients
+            $mail->setFrom('Youpload2@outlook.fr', 'Youpload');
+            $mail->addAddress($destinataire, '');     // Add a recipient
+        
+            //Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Vous avez reçu un fichier sur Youpload';
+            $mail->Body    = 'Ça te plaît Jérôme ?';
+            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        
+            $mail->send();
+            echo 'Email envoyé.';
+        } 
+
+        catch (Exception $e) {
+            echo "Une erreur est survenue lors de l'envoi du mail : " .  $mail->ErrorInfo;
+        }
     }
 }
