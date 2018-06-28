@@ -1,6 +1,37 @@
 <?php
 
-class Upload extends TransfertController {
+class Upload extends Model {
+
+    public function __construct($i_idMod){
+        parent::__construct($i_idMod);
+    }
+
+    public function Load(){
+        $sql = "select * from transfer_table
+                where tra_id = " .$this->getID();
+        if($row = $this->db->query($sql)->fetch(PDO::FETCH_ASSOC)){
+            $this->setFields($row);
+        } else {
+            $this->_id = -1;
+            $this->setFields(array());
+        }
+    }
+
+    public function Delete(){
+        if(!$this->IsDeletable()){
+            return false;
+        }
+
+        $sql = "delete from transfer_table
+                where tra_id = " .$this->getID();
+        $this->db->exec($sql);
+
+        return true;
+    }
+
+    public function IsDeletable(){
+        return true;
+    }
 
     public static function uploadFiles() {
         
@@ -106,23 +137,17 @@ class Upload extends TransfertController {
         }
     }
 
-    public static function getFiles() {
+    public static function getFiles($id) {
+        $db = Database::getInstance();
+
+        $sql = "SELECT * FROM transfer_table
+                WHERE tra_id = :tra_id";
+            
+        $stmt = $db->prepare($sql); 
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->bindValue(':tra_id', $id, PDO::PARAM_INT);
+        $stmt->execute();
         
-        if(isset($id))
-        {
-            $db = Database::getInstance();
-            $sql = "SELECT *
-            FROM transfer_table
-            WHERE tra_id = :tra_id";
-            $stmt = $db->prepare($sql); 
-            $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $stmt->bindValue(':tra_id', $id, PDO::PARAM_INT);
-            $stmt->execute();
-            return $stmt->fetchAll();
-            
-        }
-        else{
-            
-        }
+        return $stmt->fetch();            
     }
 }
