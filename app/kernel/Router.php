@@ -18,9 +18,10 @@ class Router {
             if($parts[0] == 'transfert' && (count($parts) == 1 || $parts[1] == '')){ 
                 $result['controller']       = 'Page';
                 $result['action']           = 'pageTransfert';
-            }elseif($parts[0] == 'success' && (count($parts) == 1 || $parts[1] == '')){
+            }elseif($parts[0] == 'success' && count($parts) == 2){
                 $result['controller']       = 'Page';
                 $result['action']           = 'pageSuccess';
+                $result["params"]["id"] = $parts[1]; 
             } 
             elseif($parts[0] == "download" && count($parts) == 2){ 
                 $result['controller']       = 'Download';

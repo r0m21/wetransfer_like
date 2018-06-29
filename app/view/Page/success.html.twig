@@ -5,9 +5,12 @@
 {% endblock %}
 
 {% block content %}
+
    <p> Nous sommes dans la dernière page côté expediteur </p>
 
-   {{ destinataire }}
-   {{ fichier }}
-   <a href="{{ id }}">localhost/wetransfer_like/{{ id }}</a>
+   <a href="localhost/wetransfer_like/download/{{ uploadInfos.TRA_ID }}">localhost/wetransfer_like/download/{{ uploadInfos.TRA_ID }}</a>
+
+<h1>{{ uploadInfos.TRA_DESTINATAIRE }}</h1>
+<p>{{ uploadInfos.TRA_EXPEDITEUR }}</p>
+<p>{{ uploadInfos.TRA_FICHIER }}</p>
 {% endblock %}

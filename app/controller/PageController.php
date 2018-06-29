@@ -32,12 +32,15 @@ class PageController extends Controller {
                     $id = $message['url'];
                     $email = Upload::newMail();  
                     $infos = Upload::getFiles($id);
+                    print_r($infos);
+
                     
                     $template = $this->twig->loadTemplate('/Page/transfert.html.twig');                   
                     echo $template->render(array(
                     'expediteur' => $infos['TRA_EXPEDITEUR'],
                     'destinataire' => $infos['TRA_DESTINATAIRE'],
-                    'fichier' => $infos['TRA_FICHIER']
+                    'fichier' => $infos['TRA_FICHIER'],
+                    'id' => $infos['TRA_ID']
                     ));
                 }
                 else{
@@ -45,7 +48,7 @@ class PageController extends Controller {
                 }          
             } 
 
-            catch(\Exception $e) // Global exception again here
+            catch(\Exception $e) 
             {
                 echo $e->getMessage();
                 die();                         
@@ -57,18 +60,21 @@ class PageController extends Controller {
         }
     }
     public function pageSuccess(){
-        $message['msg'] = ''; $message['type'] = '';$message['url'] = '';
         
-            $id = $message['url'];
-            $infos = Upload::getFiles($id);
+        $id_fichier = $this->route["params"]["id"];
+        $o_Upload = new Upload($id_fichier);
+        print_r($id_fichier);
+        print_r($o_Upload);
 
+        if($o_Upload->Exist()){
+            $result = Upload::getFiles($id_fichier);
+
+            $uploadInfos = $o_Upload->getFields();
+            
             $template = $this->twig->loadTemplate('/Page/success.html.twig');
             echo $template->render(array(
-
-                'destinataire' => $infos['TRA_DESTINATAIRE'],
-                'fichier' => $infos['TRA_FICHIER'],
-                'id' => $infos['TRA_ID']
+                'uploadInfos' => $uploadInfos
             ));
+        }
     }
-
 }

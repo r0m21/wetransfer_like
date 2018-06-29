@@ -84,7 +84,7 @@ class Upload extends Model {
                         $destinataire= $_POST['destinataire'];
                         
                         if(is_a_mail($expediteur) && is_a_mail($destinataire)){
-                            
+
                             $fichier = $_FILES['fichier'];
                             $ext = substr($fichier['name'], strrpos($fichier['name'], '.') + 1);
                             $unallowed_ext = array("exe", "EXE");
@@ -121,6 +121,8 @@ class Upload extends Model {
                                 $message['msg'] = 'Fichier envoyé';
                                 $message['type'] = 'success';  
                                 $message['url'] = $id; 
+                                $_SESSION['globalUrl'] = $message['url'];
+                                
                                 
                             }
                         } else {
@@ -147,17 +149,22 @@ class Upload extends Model {
 
 
     public static function getFiles($id) {
-        $db = Database::getInstance();
 
-        $sql = "SELECT * FROM transfer_table
-                WHERE tra_id = :tra_id";
-            
-        $stmt = $db->prepare($sql); 
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $stmt->bindValue(':tra_id', $id, PDO::PARAM_INT);
-        $stmt->execute();
         
-        return $stmt->fetch();     
+            $message = array();
+
+            $db = Database::getInstance();
+
+            $sql = "SELECT * FROM transfer_table
+                    WHERE tra_id = :tra_id";
+                
+            $stmt = $db->prepare($sql); 
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmt->bindValue(':tra_id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch();  
+
+            $message['url'] = $id;
     }
 
     public static function newMail(){
@@ -177,13 +184,13 @@ class Upload extends Model {
             $mail->Host = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;     // Enable SMTP authentication
             $mail->Mailer = "smtp";                               
-            $mail->Username = 'Youpload3@outlook.fr';                 // SMTP username
-            $mail->Password = 'azerty1234';                           // SMTP password
+            $mail->Username = 'Youpload4@outlook.fr';                 // SMTP username
+            $mail->Password = 'azerty123';                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
         
             //Recipients
-            $mail->setFrom('Youpload3@outlook.fr', 'Youpload');
+            $mail->setFrom('Youpload4@outlook.fr', 'Youpload');
             $mail->addAddress($destinataire, '');     // Add a recipient
         
             //Content
