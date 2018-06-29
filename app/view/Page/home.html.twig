@@ -16,6 +16,14 @@
     <a href="download/{{ url }}">POUET</a>
     {%   endif   %}
 
+    {%   if session_message !=''   %}
+
+    <p class="{{  type  }}">
+        {{   session_message.msg   }}
+    </p>
+
+    {%   endif   %}
+
     {%   if message != ''   %}
     <p class="{{ type }}">
         {{ message }}
