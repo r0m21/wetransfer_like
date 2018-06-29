@@ -28,13 +28,16 @@ class PageController extends Controller {
             try
             {    
                 if($result['type'] == "success"){
+
                     $id = $message['url'];
                     $email = Upload::newMail();  
                     $infos = Upload::getFiles($id);
+                    
                     $template = $this->twig->loadTemplate('/Page/transfert.html.twig');                   
                     echo $template->render(array(
                     'expediteur' => $infos['TRA_EXPEDITEUR'],
                     'destinataire' => $infos['TRA_DESTINATAIRE'],
+                    'fichier' => $infos['TRA_FICHIER']
                     ));
                 }
                 else{
@@ -54,8 +57,18 @@ class PageController extends Controller {
         }
     }
     public function pageSuccess(){
+        $message['msg'] = ''; $message['type'] = '';$message['url'] = '';
+        
+            $id = $message['url'];
+            $infos = Upload::getFiles($id);
+
             $template = $this->twig->loadTemplate('/Page/success.html.twig');
-            echo $template->render(array());
+            echo $template->render(array(
+
+                'destinataire' => $infos['TRA_DESTINATAIRE'],
+                'fichier' => $infos['TRA_FICHIER'],
+                'id' => $infos['TRA_ID']
+            ));
     }
 
 }

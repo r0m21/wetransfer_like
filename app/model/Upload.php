@@ -84,6 +84,7 @@ class Upload extends Model {
                         $destinataire= $_POST['destinataire'];
                         
                         if(is_a_mail($expediteur) && is_a_mail($destinataire)){
+                            
                             $fichier = $_FILES['fichier'];
                             $ext = substr($fichier['name'], strrpos($fichier['name'], '.') + 1);
                             $unallowed_ext = array("exe", "EXE");
