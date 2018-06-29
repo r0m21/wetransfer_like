@@ -135,9 +135,12 @@ class Upload extends Model {
 
                 $message['msg'] = "L'extension du fichier est incorrecte";
                 $message['type'] = 'error';    
-            } 
+            }
+            
+            $_SESSION['globalMessage'] = $message['msg'];
+
             return $message;
-            return $_SESSION['globalMessage'] = $message;
+            
         
     }
 
@@ -153,15 +156,19 @@ class Upload extends Model {
         $stmt->bindValue(':tra_id', $id, PDO::PARAM_INT);
         $stmt->execute();
         
-        return $stmt->fetch();            
+        return $stmt->fetch();     
     }
 
     public static function newMail(){
 
         $expediteur= $_POST['expediteur'];
         $destinataire= $_POST['destinataire'];
+        $infos = array();
+        $infos['destinataire'] = $destinataire;
+        $infos['expediteur'] = $expediteur;
 
-        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+        $mail = new PHPMailer(true);  
+        $mail->CharSet = 'UTF-8';                            // Passing `true` enables exceptions
         try {
             //Server settings
             $mail->SMTPDebug = 0;                                 // Enable verbose debug output
@@ -169,13 +176,13 @@ class Upload extends Model {
             $mail->Host = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;     // Enable SMTP authentication
             $mail->Mailer = "smtp";                               
-            $mail->Username = 'Youpload2@outlook.fr';                 // SMTP username
+            $mail->Username = 'Youpload3@outlook.fr';                 // SMTP username
             $mail->Password = 'azerty1234';                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
         
             //Recipients
-            $mail->setFrom('Youpload2@outlook.fr', 'Youpload');
+            $mail->setFrom('Youpload3@outlook.fr', 'Youpload');
             $mail->addAddress($destinataire, '');     // Add a recipient
         
             //Content

@@ -6,5 +6,11 @@
 
 {% block content %}
 
+{{expediteur}}
+{{destinataire}}
+<form method="POST" action="success" >
+    <input type="submit" name="submitTransfert" value="Continuer"/>
+</form>
+
 <p> Oui </p>
 {% endblock %}

@@ -16,10 +16,10 @@
     <a href="download/{{ url }}">POUET</a>
     {%   endif   %}
 
-    {%   if session_message !=''   %}
+    {%   if sessions.globalMessage !=''   %}
 
     <p class="{{  type  }}">
-        {{   session_message.msg   }}
+        {{   sessions.globalMessage   }}
     </p>
 
     {%   endif   %}
