@@ -29,10 +29,8 @@ class PageController extends Controller {
             {    
                 if($result['type'] == "success"){
 
-                    $id = $message['url'];
-                    $email = Upload::newMail();  
+                    $id = $message['url']; 
                     $infos = Upload::getFiles($id);
-                    print_r($infos);
 
                     
                     $template = $this->twig->loadTemplate('/Page/transfert.html.twig');                   
@@ -60,21 +58,25 @@ class PageController extends Controller {
         }
     }
     public function pageSuccess(){
-        
-        $id_fichier = $this->route["params"]["id"];
-        $o_Upload = new Upload($id_fichier);
-        print_r($id_fichier);
-        print_r($o_Upload);
+        if(isset($_POST['submitTransfert'])){
 
-        if($o_Upload->Exist()){
-            $result = Upload::getFiles($id_fichier);
+            $id_fichier = $this->route["params"]["id"];
+            $o_Upload = new Upload($id_fichier);
 
-            $uploadInfos = $o_Upload->getFields();
-            
-            $template = $this->twig->loadTemplate('/Page/success.html.twig');
-            echo $template->render(array(
-                'uploadInfos' => $uploadInfos
-            ));
+            if($o_Upload->Exist()){
+                $result = Upload::getFiles($id_fichier);
+
+                $uploadInfos = $o_Upload->getFields();
+                
+                $template = $this->twig->loadTemplate('/Page/success.html.twig');
+                echo $template->render(array(
+                    'uploadInfos' => $uploadInfos
+                ));
+            }   
         }
+        else{
+            header('Location:/wetransfer_like');
+        }
+        
     }
 }
