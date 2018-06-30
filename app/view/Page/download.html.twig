@@ -5,10 +5,17 @@
 {% endblock %}
 
 {% block content %}
+
+<p>{{ uploadInfos.TRA_EXPEDITEUR }}
+Vous a envoyé le fichier :</p>
+
+<h1>"{{ uploadInfos.TRA_FICHIER }}"</h1>
+
+    <p>Lien vers le fichier : localhost/wetransfer_like/upload/{{ uploadInfos.TRA_FICHIER }}</p>
+    <a href="upload/{{ uploadInfos.TRA_FICHIER }}" download="{{ uploadInfos.TRA_FICHIER }}"><input type="button" value="Télécharger" /></a>
+
 <p>Ceci est la page download</p>
 
-{%   for results in result   %}
-{{ results.tra_id }}
-{%   endfor   %}
+
 
 {% endblock %}

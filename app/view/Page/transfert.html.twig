@@ -5,5 +5,18 @@
 {% endblock %}
 
 {% block content %}
+<section class="">
+    <p class="color-1 fs-50">{{ expediteur }}</p>
+    <p class="fs-50">{{ destinataire }}</p>
+    <p class="fs-50">{{ fichier }}</p>
+    
+    <form method="POST" action="success/{{ id }}" >
+        <input type="submit" name="submitTransfert" value="Continuer"/>
+    </form>
+
+    <p class="color-1 fs-20"> Oui </p>
+</section>
+
+
 
 {% endblock %}

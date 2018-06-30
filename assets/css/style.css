@@ -1,2 +1,70 @@
+/* Reset all basic css */
 @import "reset.css";
+
+/* ================================================================
+                    Media queries container responsive
+================================================================ */
+
+@media (min-width: 1200px)
+{
+    .container{max-width: 1000px;}
+}
+
+@media (max-width: 1200px)
+{
+    .container{max-width: 680px;}
+}
+
+@media (max-width: 768px)
+{    
+    .container{max-width: 550px;}
+}
+
+@media (max-width: 576px)
+{
+    
+    .container{max-width: 100%;}
+}
+
+/* ================================================================
+                        CLASSES GENERIQUE
+================================================================ */
+
+    /* Width + height */
+    
+    .w100{width: 100%;}
+
+    /* Color + Background color + border */
+
+    .color-1{color:purple;}
+    .error{color: red;}
+    .success{color:green;}
+
+    .bg-img1{
+        background-image: url(./assets/img/bg1-1.jpg);
+        background-size: cover;
+    }
+
+    /* Flex box */
+
+    .d-flex{display:flex;}
+    .justify-content-center{justify-content:center;}
+
+    /* Font family + font size */
+
+    .fs-50{font-size: 50px;}
+    .fs-20{font-size: 20px;}
+
+    /* Margin + padding */
+
+    .m-auto{margin: auto;}
+
+    .p-20{padding:20px;}
+
+
+/* ================================================================
+                        CLASSES SPECIFIQUE
+================================================================ */
+    
+    .filter-black-nav{background-color: rgba(0,0,0,.7); z-index:9999;}
 

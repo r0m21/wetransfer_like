@@ -5,5 +5,11 @@
 {% endblock %}
 
 {% block content %}
-   
+
+    <p> Nous sommes dans la dernière page côté expediteur </p>
+
+    <p>Lien vers le fichier : localhost/wetransfer_like/upload/{{ uploadInfos.TRA_FICHIER }}</p>
+    <a href="upload/{{ uploadInfos.TRA_FICHIER }}" download="{{ uploadInfos.TRA_FICHIER }}"><input type="button" value="Télécharger" /></a>
+<p>{{ uploadInfos.TRA_EXPEDITEUR }}</p>
+<p>{{ uploadInfos.TRA_FICHIER }}</p>
 {% endblock %}

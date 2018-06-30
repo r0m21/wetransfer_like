@@ -5,23 +5,17 @@
 {% endblock %}
 
 {% block content %}
-    <form method="POST" action="" enctype="multipart/form-data">
+    <form method="POST" action="transfert" enctype="multipart/form-data">
         <input type="file" name="fichier" id="fichier" />
         <input type="text" name="expediteur" id="expediteur">
         <input type="text" name="destinataire" id="destinataire">
         <input type="submit" value="Envoyer" name="submitForm">
     </form>
+    {%   if sessions.globalMessage != '' %}
 
-    {%   if url != ''   %}
-    <a href="download/{{ url }}">POUET</a>
-    {%   endif   %}
-
-    {%   if message != ''   %}
-    <p class="{{ type }}">
-        {{ message }}
+    <p class="{{  type  }}">
+        {{   sessions.globalMessage   }}
     </p>
+
     {%   endif   %}
-
-    
-
 {% endblock %}
