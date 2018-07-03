@@ -133,45 +133,42 @@ class Upload extends Model {
                                     $mail->Host = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
                                     $mail->SMTPAuth = true;     // Enable SMTP authentication
                                     $mail->Mailer = "smtp";                               
-                                    $mail->Username = 'Youpload5@outlook.fr';                 // SMTP username
+                                    $mail->Username = 'Youpload8@outlook.fr';                 // SMTP username
                                     $mail->Password = 'azerty123';                           // SMTP password
                                     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                                     $mail->Port = 587;                                    // TCP port to connect to
                                 
                                     //Recipients
-                                    $mail->setFrom('Youpload5@outlook.fr', 'Youpload');
+                                    $mail->setFrom('Youpload8@outlook.fr', 'Youpload');
                                     $mail->addAddress($destinataire, '');     // Add a recipient
                                 
                                     //Content
                                     $mail->isHTML(true);                                  // Set email format to HTML
                                     $mail->Subject = 'Vous avez reçu un fichier sur Youpload';
                                     $mail->Body    =
-                                    '<div style="background-color: rgb(255, 240, 225); height: 200px; width: 100%; 
+                                    '<div style="background-color: rgb(255, 240, 225); height: 100px; width: 100%; 
                                     text-align: center;">
-                                        <img src="../img/logo.png"><br>
-                                        <hr style="background-color: rgb(232, 87, 67); width: 50%; height: 2px;"><br>
-                                        <p style="font-size: 1.625em; text-align: center;">' . $expediteur . '</p>
+                                        <p style="font-size: 1.625em; text-align: center; margin: auto;">' . $expediteur . '</p>
                                     </div>
 
-                                    <div style="background-color: rgb(255, 225, 205); height: 110px;">
-                                        <p style="margin:0; font-size: 1.625em; text-align: center;">Vous a envoyé le fichier</p>
+                                    <div style="background-color: rgb(255, 225, 205); height: 110px; padding: 20px;">
+                                        <p style="margin:0; font-size: 1.625em; text-align: center; color: #444;">Vous a envoyé le fichier</p>
                                         <p style="font-size: 1.625em; text-align: center;">'. $file_name . '</p>
                                     </div>
 
 
-                                    <div style="background-color: rgb(240, 215, 200); height: 270px;">
-                                        <p style="margin:0; font-size: 1.625em; text-align: center;">Recuperez le <br> sur Youpload :</p>
-                                        <div style="text-align:center;">
-                                            <div style="background-color: rgb(232, 87, 67); height: 55px; width: 245px;">
-                                                <p style="text-align:center;">LIEN DU FICHIER :</p><br>
-                                                <p style="background-color:#fff; text-align:center;">
-                                                    http://localhost/wetransfer_like/download/' . $id . '
+                                    <div style="background-color: rgb(240, 215, 200); height: 270px; padding: 20px;">
+                                        <p style="margin:0; font-size: 1.625em; text-align: center; font-style: italic; color: #444;">Recuperez le <br> sur Youpload :</p>
+                                        <div style="width: 100%;">
+                                            <div style="background-color: rgb(232, 87, 67); height: 55px; width: 320px;margin: auto;">
+                                                <p style="text-align:center;color: #fff;">LIEN DU FICHIER :
+                                                    <a href="http://localhost/wetransfer_like/download/'. $id . '" style="background-color:#fff; color:#212121;">http://localhost/wetransfer_like/download/' . $id . '</a>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>';
                                                                                                  
-                                    $mail->AltBody = $expediteur . 'Vous a envoyé le fichier' . $filename . 'Récuperez le sur Youpload : http://localhost/wetransfer_like/download/' . $id;
+                                    $mail->AltBody = "Change ton navigateur please.";
                                 
                                     $mail->send();
                                     echo 'Email envoyé.';
