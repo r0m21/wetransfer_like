@@ -12,7 +12,8 @@ html,body{font-size:62.5%;}
 
     /* Width + height */
     .h100{height:100%;}
-
+    .w20{width:20%;}
+    .w30{width:30%;}
     .w40{width:40%;}
     .w50{width:50%;}
     .w60{width:60%;}
@@ -37,8 +38,11 @@ html,body{font-size:62.5%;}
     
 
     .bg-color-1{background-color:rgba(255, 216, 185, 0.8);}
-    
     .bg-color-2{background-color:#E85743;}
+
+    .borderbot-1{border-bottom: 1px solid #fff;}
+
+    .borderleft-1{border-left: 2px solid #fff;}
 
     .bg-img-1{
         background: url("../img/bg1.jpg") no-repeat center center;
@@ -52,6 +56,10 @@ html,body{font-size:62.5%;}
         background: url("../img/bg3.jpg") no-repeat center center;
         background-size: cover;
     }
+    .bg-img-4{
+        background: url("../img/bg4.jpg") no-repeat center center;
+        background-size: cover;
+    }
 
     /* Opacity */
 
@@ -63,14 +71,20 @@ html,body{font-size:62.5%;}
     .justify-content-center{justify-content:center;}
     .justify-content-around{justify-content: space-around;}
     .justify-content-between{justify-content: space-between;}
-
+    .justify-content-end{justify-content:flex-end;}
+    .justify-self-center{justify-self:center;}
     .align-items-center{align-items:center;}
+
+    .align-self-center{align-self:center;}
+
     .column{flex-direction:column;}
 
     /* Font family + font size */
 
     .fs-3{font-size: 3em;}
     .fs-4{font-size: 4em;}
+    .fs-5{font-size: 5em;}
+    .fs-6{font-size: 6em;}
     .fs-10{font-size: 10em;}
     .fs-28{font-size:1.8rem;}
     .fs-38{font-size:2.2rem;}
@@ -83,14 +97,17 @@ html,body{font-size:62.5%;}
     .lh-25px{line-height:25px;}
     .exo{font-family: 'Exo', sans-serif;}
     .rubik{font-family: 'Rubik', sans-serif;}
+    .raleway{font-family: "Raleway", sans-serif;}
 
     /* Margin + padding */
 
     .m-auto{margin: auto;}
     
+    .mtb-30{margin:30px 0;}
     .mtb-20-40{margin:20px 0 40px 0;}
     .mtb-40-20{margin:40px 0 20px 0;}
 
+    .mt-6{margin-top: 6px;}
     .mt-25{margin-top:25px;}
 
     .mtb-30{margin:30px 0;}
@@ -98,8 +115,12 @@ html,body{font-size:62.5%;}
     .pb-10{padding-bottom:10px;}
 
     .p-5{padding:5px;}
+    .p-10{padding:10px;}
     .p-20{padding:20px;}
+
     .p-r-20{padding-right:20px;}
+    .pl-80{padding-left:80px;}
+    .pl-50{padding-left:50px;}
 
     .ptb-10-15{padding:10px 15px;}
     .ptb-30{padding:30px 0;}
@@ -112,6 +133,7 @@ html,body{font-size:62.5%;}
     /* Delete basic style */
 
     .border-none{border:none;}
+    .overflow-y{overflow-y: hidden;}
 
 /* ================================================================
                         CLASSES SPECIFIQUE
