@@ -6,19 +6,36 @@
 
 {% block content %}
 <section class="">
+    
+    <form class="d-flex column justify-content-around h50vh w60 bg-color-1 mtb-30 ptb-30" method="POST" action="transfert" enctype="multipart/form-data">
 
-    <form method="POST" action="transfert" enctype="multipart/form-data">
-        <input type="file" name="fichier" id="fichier" />
-        <input type="text" name="expediteur" id="expediteur">
-        <input type="text" name="destinataire" id="destinataire">
-        <input type="submit" value="Envoyer" name="submitForm">
+        <div class="d-flex justify-content-center">
+            <label for="fichier">
+                <i class="fas fa-plus-circle fs-10"></i>
+            </label>
+            <input class="input-file" type="file" name="fichier" id="fichier"/>
+        </div>
+
+        <div class="d-flex column align-items-center mtb-40-20">
+            <label class="w70 fs-4 pb-10" for="expediteur" >Votre Email</label>
+            <input class="w70 fs-3 p-5" type="text" name="expediteur" id="expediteur">
+        </div>
+
+        <div class="d-flex column align-items-center mtb-20-40">
+            <label class="w70 fs-4 pb-10" for="destinataire">Email destinataire</label>
+            <input class="w70 fs-3 p-5" type="text" name="destinataire" id="destinataire">
+        </div>
+        <div class="text-center">
+            <input class="white fs-4 ptb-10-15 bg-color-2 border-none" type="submit" value="ENVOYER" name="submitForm">
+        </div>
     </form>
 
-    {%   if sessions.globalMessage != '' %}
+        {%   if sessions.globalMessage != '' %}
 
-    <p class="{{  sessions.globalMessage.type  }}">
-        {{   sessions.globalMessage   }}
-    </p>
+            <p class="{{  sessions.globalMessage.type  }}">
+                {{   sessions.globalMessage   }}
+            </p>
+
+        {%   endif   %}
 </section>
-    {%   endif   %}
 {% endblock %}
