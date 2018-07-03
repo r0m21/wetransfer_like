@@ -157,7 +157,7 @@ html,body{font-size:62.5%;}
 
 @media (max-width: 1200px)
 {
-
+    .fs-50{font-size:2rem;}
 }
 @media (max-width: 900px)
 {
@@ -166,14 +166,16 @@ html,body{font-size:62.5%;}
 }
 @media (max-width: 768px)
 {    
-
+    .justify-content-center-mobile{justify-content:center;}
+    .break-word{word-break:break-all;}
     .w40-mobile{width:100%;}
     .none-mobile{display:none;}
     .fs-28{font-size:1.5rem;}
+
 }
 
 @media (max-width: 576px)
 {
-    
+    .fs-50{font-size:1.7rem;}
     .container{max-width: 100%;}
 }

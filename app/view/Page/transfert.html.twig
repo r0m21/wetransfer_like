@@ -5,14 +5,14 @@
 {% endblock %}
 
 {% block content %}
-<section class="ptb-30 h60vh d-flex justify-content-around">
-    <div class="w30">
-        <div class="d-flex column borderleft-1 pl-50">
+<section class="ptb-30 h60vh d-flex justify-content-around justify-content-center-mobile">
+    <div class="w30 none-mobile">
+        <div class="d-flex column borderleft-1 pl-50 none-mobile">
                 <h5 class="fs-4 text-center white raleway fw-300">Nothing is lost,</h5>
                 <h5 class="fs-5 text-center white raleway fw-300 mt-6">Nothing is created,</h5>
             </div>
     </div>
-    <div class="h100 w40 bg-color-1 exo  text-center d-flex column justify-content-around">    
+    <div class="h100 w40 bg-color-1 exo  text-center d-flex column justify-content-around break-word w40-mobile">    
         <p class="fs-50 fw-500">{{ expediteur }}</p>
         <div>
             <p class="fs-50 fw-300 opacity07 p-5">Envoie le fichier</p>
@@ -28,16 +28,14 @@
         </div>
     </form>    
     </div>
-    <div class="w30 d-flex column justify-content-end">
+    <div class="w30 d-flex column justify-content-end none-mobile">
         <div class="d-flex column align-self-center mtb-30">
             
-            <h4 class="mt-25 fs-4 italic white raleway fw-300 pl-80"><span class="pb-10">Everything is transfered</span></h4>
+            <h4 class="mt-25 fs-4 italic white raleway fw-300 pl-80 "><span class="pb-10 borderbot-1">Everything is transfered</span></h4>
         </div>
         
     </div>
 
-
-    <p class="color-1 fs-20"> Oui </p>
 </section>
 <section class="h15vh d-flex column align-items-center none-mobile">
 <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
