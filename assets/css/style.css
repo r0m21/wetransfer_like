@@ -4,47 +4,34 @@
 /* Init pour les font size en REM */
 html,body{font-size:62.5%;}
 
-/* ================================================================
-                    Media queries container responsive
-================================================================ */
-
-@media (min-width: 1200px)
-{
-    .container{max-width: 1000px;}
-}
-
-@media (max-width: 1200px)
-{
-    .container{max-width: 680px;}
-}
-
-@media (max-width: 768px)
-{    
-    .container{max-width: 550px;}
-}
-
-@media (max-width: 576px)
-{
-    
-    .container{max-width: 100%;}
-}
 
 /* ================================================================
                         CLASSES GENERIQUE
 ================================================================ */
+    /* Positions */
 
+    .absolute{position:absolute;}
     /* Width + height */
     
     .w100{width: 100%;}
-
+    .w75{width:75%;}
     .h100vh{height: 100vh;}
-
+    .h5vh{height:5vh;}
+    .h60vh{height:60vh;}
+    .h15vh{height:15vh;}
+    .w40{width:40%;}
+    .w50{width:50%;}
+    
     /* Color + Background color/img + border */
 
     .color-1{color: #FFD8B9;} /* Beige */
     .color-2{color: #E85743;} /* Orange */
+    .color-3{color:#ffffff;}
     .error{color: red;}
     .success{color:green;}
+    .opacity07{opacity:0.7;}
+
+    .text-decoration-none{text-decoration:none;}
 
 
 
@@ -65,22 +52,66 @@ html,body{font-size:62.5%;}
 
     .d-flex{display:flex;}
     .justify-content-center{justify-content:center;}
+    .justify-content-around{justify-content:space-around;}
+    .justify-content-between{justify-content:space-between;}
+    .align-items-center{align-items:center;}
+    .flex-column{flex-direction:column;}
 
     /* Font family + font size */
 
     .fs-50{font-size: 50px;}
     .fs-20{font-size: 20px;}
-
+    .fs-28{font-size:1.8rem;}
+    .fs-38{font-size:2.2rem;}
+    .exo-italic{font-family: "Exo-Italic";}
+    .fw-600{font-weight:600;}
+    .fw-300{font-weight:100;}
+    .italic{font-style:italic;}
+    .exo{font-family: 'Exo', sans-serif;}
+    .rubik{font-family: 'Rubik', sans-serif;}
     /* Margin + padding */
 
     .m-auto{margin: auto;}
 
     .p-20{padding:20px;}
+    .p-r-20{padding-right:20px;}
 
 
 /* ================================================================
                         CLASSES SPECIFIQUE
 ================================================================ */
     
-    .filter-black-nav{background-color: rgba(0,0,0,.5); z-index:9999;}
+    .filter-black{background-color: rgba(0,0,0,.5); z-index:9999;}
 
+/* ================================================================
+                    Media queries container responsive
+================================================================ */
+
+@media (min-width: 1200px)
+{
+    .container{max-width: 85%;}
+}
+
+@media (max-width: 1200px)
+{
+
+}
+@media (max-width: 900px)
+{
+    .h5vh-mobile{height:10vh;}
+ 
+}
+@media (max-width: 768px)
+{    
+
+    .w40-mobile{width:100%;}
+    .none-mobile{display:none;}
+    .fs-28{font-size:1.5rem;}
+    .svg-responsive{display:none;}
+}
+
+@media (max-width: 576px)
+{
+    
+    .container{max-width: 100%;}
+}

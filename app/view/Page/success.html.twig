@@ -5,11 +5,30 @@
 {% endblock %}
 
 {% block content %}
-
+<section class="h60vh">
     <p> Nous sommes dans la dernière page côté expediteur </p>
 
     <p>Lien vers le fichier : localhost/wetransfer_like/upload/{{ uploadInfos.TRA_FICHIER }}</p>
     <a href="upload/{{ uploadInfos.TRA_FICHIER }}" download="{{ uploadInfos.TRA_FICHIER }}"><input type="button" value="Télécharger" /></a>
 <p>{{ uploadInfos.TRA_EXPEDITEUR }}</p>
 <p>{{ uploadInfos.TRA_FICHIER }}</p>
+</section>
+<section class="h15vh d-flex flex-column align-items-center none-mobile">
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg class="svg-responsive" enable-background="new 0 0 1920 175" version="1.1" viewBox="0 0 1920 175" stroke="#fff" stroke-width="3" opacity="0.5" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+	<circle cx="201.28" cy="88.082" r="52.321" fill="#fff" opacity="0.5"/>
+	<path d="m201.28 141.1c-29.235 0-53.019-23.784-53.019-53.02 0-29.234 23.784-53.018 53.019-53.018 29.234 0 53.019 23.783 53.019 53.018-1e-3 29.235-23.785 53.02-53.019 53.02zm0-104.64c-28.465 0-51.624 23.158-51.624 51.623 0 28.467 23.159 51.625 51.624 51.625s51.624-23.158 51.624-51.625c-1e-3 -28.465-23.159-51.623-51.624-51.623z"/>
+	<circle cx="960" cy="88.082" r="52.322" fill="#fff" opacity="0.5"/>
+	<path d="m960 141.1c-29.234 0-53.019-23.784-53.019-53.02 0-29.234 23.784-53.018 53.019-53.018 29.234 0 53.017 23.783 53.017 53.018 1e-3 29.235-23.783 53.02-53.017 53.02zm0-104.64c-28.466 0-51.623 23.158-51.623 51.623 0 28.467 23.157 51.625 51.623 51.625s51.623-23.158 51.623-51.625c0-28.465-23.156-51.623-51.623-51.623z"/>
+	<circle cx="1719.3" cy="88.082" r="52.321" fill="#fff" />
+	<path d="m1719.3 141.1c-29.234 0-53.018-23.784-53.018-53.02 0-29.234 23.783-53.018 53.018-53.018s53.02 23.783 53.02 53.018-23.785 53.02-53.02 53.02zm0-104.64c-28.465 0-51.623 23.158-51.623 51.623 0 28.467 23.158 51.625 51.623 51.625 28.467 0 51.625-23.158 51.625-51.625 0-28.465-23.158-51.623-51.625-51.623z"/>
+<rect x="253" y="88" width="655" height="1"/>
+<rect x="1013" y="88" width="655" height="1"/>
+</svg>
+<div class="w75 exo color-3 d-flex justify-content-between fs-38 italic">
+    <p class="fw-300">Upload</p> 
+    <p class="fw-300">Envoi</p> 
+    <p class="fw-600">Terminé</p> 
+</div>
+</section>
 {% endblock %}
