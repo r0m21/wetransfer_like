@@ -4,13 +4,9 @@ class PageController extends Controller {
      
     public function display(){
         unset($_SESSION['globalMessage']);
-        
-        $message['type'] = '';
 
             $template = $this->twig->loadTemplate('/Page/home.html.twig');
-            echo $template->render(array(
-                "type" => $message['type']
-            )); 
+            echo $template->render(array()); 
     }
 
     public function pageTransfert(){

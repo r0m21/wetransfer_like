@@ -5,17 +5,20 @@
 {% endblock %}
 
 {% block content %}
+<section class="">
+
     <form method="POST" action="transfert" enctype="multipart/form-data">
         <input type="file" name="fichier" id="fichier" />
         <input type="text" name="expediteur" id="expediteur">
         <input type="text" name="destinataire" id="destinataire">
         <input type="submit" value="Envoyer" name="submitForm">
     </form>
+
     {%   if sessions.globalMessage != '' %}
 
-    <p class="{{  type  }}">
+    <p class="{{  sessions.globalMessage.type  }}">
         {{   sessions.globalMessage   }}
     </p>
-
+</section>
     {%   endif   %}
 {% endblock %}

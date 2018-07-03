@@ -1,6 +1,9 @@
 /* Reset all basic css */
 @import "reset.css";
 
+/* Init pour les font size en REM */
+html,body{font-size:62.5%;}
+
 /* ================================================================
                     Media queries container responsive
 ================================================================ */
@@ -34,14 +37,27 @@
     
     .w100{width: 100%;}
 
-    /* Color + Background color + border */
+    .h100vh{height: 100vh;}
 
-    .color-1{color:purple;}
+    /* Color + Background color/img + border */
+
+    .color-1{color: #FFD8B9;} /* Beige */
+    .color-2{color: #E85743;} /* Orange */
     .error{color: red;}
     .success{color:green;}
 
-    .bg-img1{
-        background-image: url(./assets/img/bg1-1.jpg);
+
+
+    .bg-img-1{
+        background: url("../img/bg1.jpg") no-repeat center center;
+        background-size: cover;
+    }
+    .bg-img-2{
+        background: url("../img/bg2.jpg") no-repeat center center;
+        background-size: cover;
+    }
+    .bg-img-3{
+        background: url("../img/bg3.jpg") no-repeat center center;
         background-size: cover;
     }
 
@@ -66,5 +82,5 @@
                         CLASSES SPECIFIQUE
 ================================================================ */
     
-    .filter-black-nav{background-color: rgba(0,0,0,.7); z-index:9999;}
+    .filter-black-nav{background-color: rgba(0,0,0,.5); z-index:9999;}
 
