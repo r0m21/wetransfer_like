@@ -5,16 +5,49 @@
 {% endblock %}
 
 {% block content %}
-<section class="h60vh">
+<section class="ptb-30 h60vh d-flex justify-content-around justify-content-center-mobile h60vh-mobile">
+    <div class="w30 none-mobile">
+        <div class="d-flex column borderleft-1 pl-50 none-mobile">
+                <h5 class="fs-4 text-center white raleway fw-300">Nothing is lost,</h5>
+                <h5 class="fs-5 text-center white raleway fw-300 mt-6">Nothing is created,</h5>
+            </div>
+    </div>
+    <div class="h100 w40 bg-color-1 exo  text-center d-flex column justify-content-around break-word w40-mobile">    
+        <div>
+            <p class="fs-50 fw-300 opacity07 p-5">Votre fichier</p>
+            <p class="fs-50 fw-500">"{{ uploadInfos.TRA_FICHIER }}"</p>
+            <p class="fs-50 fw-300 opacity07 p-5">a bien été envoyé</p>
+        </div>
+        <div>
+            <p class="fs-50 fw-300 opacity07 p-5">À l'adresse</p>
+            <p class="fs-50 fw-500">{{ uploadInfos.TRA_DESTINATAIRE }}</p>
+        </div>
+        <div class="bg-color-2 w75">
+            <div>
+                <p class="white exo fs-28">LIEN DU FICHIER :</p>
+                <p>localhost/wetransfer_like/upload/{{ uploadInfos.TRA_FICHIER }}</p>
+            </div>
+            <div>
+                <a href="upload/{{ uploadInfos.TRA_FICHIER }}" download="{{ uploadInfos.TRA_FICHIER }}"><input type="button" value="Télécharger" /></a>
+            </div>
+        </div>
+    </div>
+    <div class="w30 d-flex column justify-content-end none-mobile">
+        <div class="d-flex column align-self-center mtb-30">
+            
+            <h4 class="mt-25 fs-4 italic white raleway fw-300 pl-80 "><span class="pb-10 borderbot-1">Everything is transfered</span></h4>
+        </div>
+        
+    </div>
 
-
-    <p> Nous sommes dans la dernière page côté expediteur </p>
-
-    <p>Lien vers le fichier : localhost/wetransfer_like/upload/{{ uploadInfos.TRA_FICHIER }}</p>
-    <a href="upload/{{ uploadInfos.TRA_FICHIER }}" download="{{ uploadInfos.TRA_FICHIER }}"><input type="button" value="Télécharger" /></a>
-<p>{{ uploadInfos.TRA_EXPEDITEUR }}</p>
-<p>{{ uploadInfos.TRA_FICHIER }}</p>
 </section>
+
+
+    
+    
+<p></p>
+<p></p>
+
 <section class="h15vh d-flex column align-items-center none-mobile">
 <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
 <svg class="svg-responsive" enable-background="new 0 0 1920 175" version="1.1" viewBox="0 0 1920 175" stroke="#fff" stroke-width="3" opacity="0.5" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">

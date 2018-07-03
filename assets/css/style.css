@@ -166,6 +166,7 @@ html,body{font-size:62.5%;}
 }
 @media (max-width: 768px)
 {    
+    .h60vh-mobile{height:70vh;}
     .justify-content-center-mobile{justify-content:center;}
     .break-word{word-break:break-all;}
     .w40-mobile{width:100%;}

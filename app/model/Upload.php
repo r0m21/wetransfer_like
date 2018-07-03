@@ -133,13 +133,13 @@ class Upload extends Model {
                                     $mail->Host = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
                                     $mail->SMTPAuth = true;     // Enable SMTP authentication
                                     $mail->Mailer = "smtp";                               
-                                    $mail->Username = 'Youpload7@outlook.fr';                 // SMTP username
+                                    $mail->Username = 'Youpload8@outlook.fr';                 // SMTP username
                                     $mail->Password = 'azerty123';                           // SMTP password
                                     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                                     $mail->Port = 587;                                    // TCP port to connect to
                                 
                                     //Recipients
-                                    $mail->setFrom('Youpload7@outlook.fr', 'Youpload');
+                                    $mail->setFrom('Youpload8@outlook.fr', 'Youpload');
                                     $mail->addAddress($destinataire, '');     // Add a recipient
                                 
                                     //Content
