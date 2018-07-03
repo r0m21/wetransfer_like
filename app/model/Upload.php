@@ -80,8 +80,8 @@ class Upload extends Model {
 
                 }
                     if($erreur == 0){
-                        $expediteur= $_POST['expediteur'];
-                        $destinataire= $_POST['destinataire'];
+                        $expediteur= htmlentities($_POST['expediteur']);
+                        $destinataire= htmlentities($_POST['destinataire']);
                         
                         if(is_a_mail($expediteur) && is_a_mail($destinataire)){
 
