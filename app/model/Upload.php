@@ -133,7 +133,7 @@ class Upload extends Model {
                                     $mail->Host = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
                                     $mail->SMTPAuth = true;     // Enable SMTP authentication
                                     $mail->Mailer = "smtp";                               
-                                    $mail->Username = 'Youpload8@outlook.fr';                 // SMTP username
+                                    $mail->Username = 'Youpload9@outlook.fr';                 // SMTP username
                                     $mail->Password = 'azerty123';                           // SMTP password
                                     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                                     $mail->Port = 587;                                    // TCP port to connect to
@@ -171,7 +171,7 @@ class Upload extends Model {
                                         </div>
                                     </div>';
                                                                                                  
-                                    $mail->AltBody = $expediteur . 'Vous a envoyé le fichier' . $filename . 'Récuperez le sur Youpload : http://localhost/wetransfer_like/download/' . $id;
+                                    $mail->AltBody = "oui";
                                 
                                     $mail->send();
                                     echo 'Email envoyé.';
