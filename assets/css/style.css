@@ -7,27 +7,34 @@ html,body{font-size:62.5%;}
 /* ================================================================
                         CLASSES GENERIQUE
 ================================================================ */
+    /* Positions */
+
 
     /* Width + height */
+    .h100{height:100%;}
 
+    .w40{width:40%;}
+    .w50{width:50%;}
     .w60{width:60%;}
     .w70{width:70%;}
+    .w75{width:75%;}
     .w100{width: 100%;}
     
-
-
-    .h100{height:100%;}
-    .h100vh{height: 100vh;}
+    .h5vh{height:5vh;}
+    .h15vh{height:15vh;}
+    .h20vh{height: 20vh;}
     .h50vh{height:50vh;}
-
+    .h60vh{height:60vh;}
+    .h100vh{height: 100vh;}
+       
     /* Color + Background color/img + border */
-
     .white{color: #fff;}
 
     .color-1{color: #FFD8B9;} /* Beige */
     .color-2{color: #E85743;} /* Orange */
     .error{color: red;}
     .success{color:green;}
+    
 
     .bg-color-1{background-color:rgba(255, 216, 185, 0.8);}
     
@@ -46,6 +53,10 @@ html,body{font-size:62.5%;}
         background-size: cover;
     }
 
+    /* Opacity */
+
+    .opacity07{opacity:0.7;}
+
     /* Flex box */
 
     .d-flex{display:flex;}
@@ -61,7 +72,15 @@ html,body{font-size:62.5%;}
     .fs-3{font-size: 3em;}
     .fs-4{font-size: 4em;}
     .fs-10{font-size: 10em;}
-    
+    .fs-28{font-size:1.8rem;}
+    .fs-38{font-size:2.2rem;}
+
+    .fw-600{font-weight:600;}
+    .fw-300{font-weight:100;}
+    .italic{font-style:italic;}
+
+    .exo{font-family: 'Exo', sans-serif;}
+    .rubik{font-family: 'Rubik', sans-serif;}
 
     /* Margin + padding */
 
@@ -78,13 +97,15 @@ html,body{font-size:62.5%;}
 
     .p-5{padding:5px;}
     .p-20{padding:20px;}
+    .p-r-20{padding-right:20px;}
 
     .ptb-10-15{padding:10px 15px;}
     .ptb-30{padding:30px 0;}
 
     /* Text properties */
 
-    .text-center{text-align:center;}
+    .text-center{text-align:center;}  
+    .text-decoration-none{text-decoration:none;}
 
     /* Delete basic style */
 
@@ -112,12 +133,19 @@ html,body{font-size:62.5%;}
 
 @media (max-width: 1200px)
 {
-    .container{max-width: 680px;}
-}
 
+}
+@media (max-width: 900px)
+{
+    .h5vh-mobile{height:10vh;}
+ 
+}
 @media (max-width: 768px)
 {    
-    .container{max-width: 550px;}
+
+    .w40-mobile{width:100%;}
+    .none-mobile{display:none;}
+    .fs-28{font-size:1.5rem;}
 }
 
 @media (max-width: 576px)
