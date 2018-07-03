@@ -37,8 +37,11 @@ html,body{font-size:62.5%;}
     
 
     .bg-color-1{background-color:rgba(255, 216, 185, 0.8);}
-    
     .bg-color-2{background-color:#E85743;}
+
+    .borderbot-1{border-bottom: 1px solid #fff;}
+
+    .borderleft-1{border-left: 2px solid #fff;}
 
     .bg-img-1{
         background: url("../img/bg1.jpg") no-repeat center center;
@@ -50,6 +53,10 @@ html,body{font-size:62.5%;}
     }
     .bg-img-3{
         background: url("../img/bg3.jpg") no-repeat center center;
+        background-size: cover;
+    }
+    .bg-img-4{
+        background: url("../img/bg4.jpg") no-repeat center center;
         background-size: cover;
     }
 
@@ -65,6 +72,9 @@ html,body{font-size:62.5%;}
     .justify-content-between{justify-content: space-between;}
 
     .align-items-center{align-items:center;}
+
+    .align-self-center{align-self:center;}
+
     .column{flex-direction:column;}
 
     /* Font family + font size */
@@ -76,19 +86,23 @@ html,body{font-size:62.5%;}
     .fs-38{font-size:2.2rem;}
 
     .fw-600{font-weight:600;}
-    .fw-300{font-weight:100;}
+    .fw-100{font-weight:100;}
+    .fw-300{font-weight: 300;}
     .italic{font-style:italic;}
 
     .exo{font-family: 'Exo', sans-serif;}
     .rubik{font-family: 'Rubik', sans-serif;}
+    .raleway{font-family: "Raleway", sans-serif;}
 
     /* Margin + padding */
 
     .m-auto{margin: auto;}
     
+    .mtb-30{margin:30px 0;}
     .mtb-20-40{margin:20px 0 40px 0;}
     .mtb-40-20{margin:40px 0 20px 0;}
 
+    .mt-6{margin-top: 6px;}
     .mt-25{margin-top:25px;}
 
     .mtb-30{margin:30px 0;}
@@ -97,7 +111,9 @@ html,body{font-size:62.5%;}
 
     .p-5{padding:5px;}
     .p-20{padding:20px;}
+
     .p-r-20{padding-right:20px;}
+    .pl-80{padding-left:80px;}
 
     .ptb-10-15{padding:10px 15px;}
     .ptb-30{padding:30px 0;}
@@ -110,6 +126,7 @@ html,body{font-size:62.5%;}
     /* Delete basic style */
 
     .border-none{border:none;}
+    .overflow-y{overflow-y: hidden;}
 
 /* ================================================================
                         CLASSES SPECIFIQUE
