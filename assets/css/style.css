@@ -21,7 +21,7 @@ html,body{font-size:62.5%;}
     .w70{width:70%;}
     .w75{width:75%;}
     .w100{width: 100%;}
-    
+    .m-h15{max-height:15%;}
     .h5vh{height:5vh;}
     .h15vh{height:15vh;}
     .h20vh{height: 20vh;}
@@ -92,6 +92,7 @@ html,body{font-size:62.5%;}
     .fs-28{font-size:1.8rem;}
     .fs-38{font-size:2.2rem;}
     .fs-50{font-size:2.7rem;}
+    .fs-75{font-size:5rem;}
     .fw-600{font-weight:600;}
     .fw-500{font-weight:500;}
     .fw-300{font-weight:300;}
@@ -137,13 +138,13 @@ html,body{font-size:62.5%;}
     /* Delete basic style */
 
     .border-none{border:none;}
-    .overflow-y{overflow-y: hidden;}
 
 /* ================================================================
                         CLASSES SPECIFIQUE
 ================================================================ */
     
     .filter-black{background-color: rgba(0,0,0,.5); z-index:9999;}
+    .filter-black2{background-color: rgba(0,0,0,.2); z-index:9999;}
 
     .fa-plus-circle{color:#E85743; cursor: pointer;}
 
@@ -161,11 +162,15 @@ html,body{font-size:62.5%;}
 
 @media (max-width: 1200px)
 {
+    .borderbot-1{border:none;}
+
     .fs-50{font-size:2rem;}
 }
 @media (max-width: 900px)
 {
     .h5vh-mobile{height:10vh;}
+    .none-medium{display:none;}
+    .w100-medium{width:100%;}
  
 }
 @media (max-width: 768px)
