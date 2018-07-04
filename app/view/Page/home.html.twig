@@ -6,9 +6,9 @@
 
 {% block content %}
 
-<section class="container m-auto ptb-30 d-flex">
+<section class="container m-auto ptb-30 d-flex justify-content-between">
     
-    <form class="d-flex column justify-content-around w60 bg-color-1 ptb-30" method="POST" action="transfert" enctype="multipart/form-data">
+    <form class="d-flex column justify-content-around w50 bg-color-1 ptb-30" method="POST" action="transfert" enctype="multipart/form-data">
 
         <div class="d-flex justify-content-center">
             <label for="fichier">
@@ -42,13 +42,19 @@
     </form>
 
     <div class="w40 d-flex column justify-content-center">
+        
         <div class="d-flex column align-self-center mtb-30">
+
             <div class="d-flex column borderleft-1 pl-80">
                 <h5 class="fs-4 text-center white raleway fw-300">Nothing is lost,</h5>
                 <h5 class="fs-5 text-center white raleway fw-300 mt-6">Nothing is created,</h5>
             </div>
-            <h4 class="mt-25 fs-6 italic white raleway fw-300 pl-80"><span class="borderbot-1 pb-10">Everything is transfered</span></h4>
+            
         </div>
+
+        <h4 class="mt-25 fs-6 italic white raleway fw-300 text-center pb-10">
+            <span class="borderbot-1">Everything is transfered</span>
+        </h4>
     </div>
     
 </section>

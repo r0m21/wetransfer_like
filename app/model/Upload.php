@@ -171,7 +171,6 @@ class Upload extends Model {
                                     $mail->AltBody = "Change ton navigateur please.";
                                 
                                     $mail->send();
-                                    echo 'Email envoyé.';
                                 } 
                         
                                 catch (Exception $e) {
