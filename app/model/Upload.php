@@ -130,16 +130,16 @@ class Upload extends Model {
                                     //Server settings
                                     $mail->SMTPDebug = 0;                                 // Enable verbose debug output
                                     $mail->isSMTP();                                      // Set mailer to use SMTP
-                                    $mail->Host = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
+                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
                                     $mail->SMTPAuth = true;     // Enable SMTP authentication
                                     $mail->Mailer = "smtp";                               
-                                    $mail->Username = 'Youpload9@outlook.fr';                 // SMTP username
-                                    $mail->Password = 'azerty123';                           // SMTP password
+                                    $mail->Username = 'youpload.master@gmail.com';                 // SMTP username
+                                    $mail->Password = 'azerty987123';                           // SMTP password
                                     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                                    $mail->Port = 587;                                    // TCP port to connect to
+                                    $mail->Port = 25;                                    // TCP port to connect to
                                 
                                     //Recipients
-                                    $mail->setFrom('Youpload9@outlook.fr', 'Youpload');
+                                    $mail->setFrom('youpload.master@gmail.com', 'Youpload');
                                     $mail->addAddress($destinataire, '');     // Add a recipient
                                 
                                     //Content
