@@ -5,29 +5,34 @@
 {% endblock %}
 
 {% block content %}
-<section class="ptb-30 h60vh d-flex justify-content-around justify-content-center-mobile">
+<section class="container m-auto ptb-30 d-flex justify-content-around justify-content-center-mobile">
     <div class="w30 none-mobile">
         <div class="d-flex column borderleft-1 pl-50 none-mobile">
                 <h5 class="fs-4 text-center white raleway fw-300">Nothing is lost,</h5>
                 <h5 class="fs-5 text-center white raleway fw-300 mt-6">Nothing is created,</h5>
-            </div>
+        </div>
     </div>
+
     <div class="h100 w40 bg-color-1 exo  text-center d-flex column justify-content-around break-word w40-mobile">    
         <p class="fs-50 fw-500">{{ expediteur }}</p>
+
         <div>
             <p class="fs-50 fw-300 opacity07 p-5">Envoie le fichier</p>
             <p class="fs-50 fw-500">"{{ fichier }}"</p>
         </div>
+
         <div>
             <p class="fs-50 fw-300 opacity07 p-5">À l'adresse</p>
             <p class="fs-50 fw-500">{{ destinataire }}</p>
         </div>
-        <form method="POST" action="success/{{ id }}" >
-        <div class="text-center">
-            <input class="white fs-4 ptb-10-15 bg-color-2 border-none" type="submit" value="CONTINUER" name="submitForm">
-        </div>
-    </form>    
+
+        <form method="POST" action="success/{{ id }}">
+            <div class="text-center">
+                <input class="white fs-4 ptb-10-15 bg-color-2 border-none" type="submit" value="CONTINUER" name="submitTransfert">
+            </div>
+        </form>    
     </div>
+
     <div class="w30 d-flex column justify-content-end none-mobile">
         <div class="d-flex column align-self-center mtb-30">
             
@@ -37,7 +42,7 @@
     </div>
 
 </section>
-<section class="h15vh d-flex column align-items-center none-mobile">
+<section class="d-flex column align-items-center none-mobile">
 <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
 <svg class="svg-responsive" enable-background="new 0 0 1920 175" version="1.1" viewBox="0 0 1920 175" stroke="#fff" stroke-width="3" opacity="0.5" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
 	<circle cx="201.28" cy="88.082" r="52.321" fill="#fff" opacity="0.5"/>

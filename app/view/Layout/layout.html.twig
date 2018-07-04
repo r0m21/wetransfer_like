@@ -13,16 +13,14 @@
 
     </head>
     
-    <body class="h100vh bg-img-4 overflow-y">
-
-        {% include 'Layout/nav.html.twig' %}
+    <body class="h100vh d-flex column bg-img-4">
         
-        <main class="container m-auto">
-            {% block content %}{% endblock %}
-        </main>
+            {% include 'Layout/nav.html.twig' %}
+            <main class="container m-auto w100 flex-grow-1">
+                {% block content %}{% endblock %}
+            </main>
+            {% include 'Layout/footer.html.twig' %}
         
-        {% include 'Layout/footer.html.twig' %}
-
         <script src="./assets/js/jquery.min.js"></script>        
         <script src="./assets/js/script.js"></script>        
     </body>

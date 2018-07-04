@@ -73,8 +73,10 @@ html,body{font-size:62.5%;}
     .justify-content-between{justify-content: space-between;}
     .justify-content-end{justify-content:flex-end;}
     .justify-self-center{justify-self:center;}
-    .align-items-center{align-items:center;}
 
+    .flex-grow-1{flex-grow: 1;}
+
+    .align-items-center{align-items:center;}
     .align-self-center{align-self:center;}
 
     .column{flex-direction:column;}
