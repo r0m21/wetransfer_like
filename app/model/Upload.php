@@ -162,7 +162,7 @@ class Upload extends Model {
                                         <div style="width: 100%;">
                                             <div style="background-color: rgb(232, 87, 67); height: 55px; width: 320px;margin: auto;">
                                                 <p style="text-align:center;color: #fff;">LIEN DU FICHIER :
-                                                    <a href="http://localhost/wetransfer_like/download/'. $id . '" style="background-color:#fff; color:#212121;">http://localhost/wetransfer_like/download/' . $id . '</a>
+                                                    <a href="http://localhost/wetransfer_like/download/'. $id . '" style="background-color:#fff; color:#212121;">https://valenting.promo-18.codeur.online/wetransfer_like/download/' . $id . '</a>
                                                 </p>
                                             </div>
                                         </div>
